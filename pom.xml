@@ -21,9 +21,9 @@
         <!--
         Eureka can act as both client and server.  We will configure it as a server and disable some
         of the client features.
-        Keeping the client will cause eureka start to fail with NoClassDefFoundError for ApacheHttpClient4.  To resolve,
-        Sergey suggests either adding "jersey-apache-client4" dependency (version 1.19.4) or commenting our / removing
-        eureka client dependency and leaving only server.
+        Keeping the client will cause eureka start to fail with NoClassDefFoundError for ApacheHttpClient4.
+        To resolve, Sergey suggests either adding "jersey-apache-client4" dependency (version 1.19.4) or
+        commenting out/removing eureka client dependency and leaving only server.
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -33,12 +33,20 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
